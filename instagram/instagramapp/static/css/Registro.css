@@ -1,0 +1,24 @@
+.Img1{
+  height: 150px;
+  width: auto;
+  border-radius: 20%;
+}
+#Img2{
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+}
+#Imagenes{
+  border-style: double;
+  width: 45%;
+  float: left;
+  text-align: center;
+
+}
+#Formulario{
+  color: rgb(51, 102, 204);
+  border-style: double;
+  width: 50%;
+  text-align: center;
+  float: right;
+}

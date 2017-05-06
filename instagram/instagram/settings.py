@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'instagramapp.instagramappconfig',
+    'instagramapp.apps.InstagramappConfig',
+    #'instagramapp.instagramappconfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
