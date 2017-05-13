@@ -11,13 +11,13 @@
 
 <meta name="viewport" content="width:device-width, initial-scale=1.0">
 </head>
-<body>
+<body background = "../static/media/Espacio.jpg">
   <center><div class="card" style="width: 40rem;">
     <div class="card-block">
       <form>
         <div class = "form-group"id="Formulario">
-          <h1>Registro</h1>
-          Bienvenido<br><br>
+          <h1 style="color:white;">Registro</h1>
+          <h2 style="color:white;">Bienvenido</h2><br><br>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Correo" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">@example.com</span>
@@ -33,7 +33,7 @@
           </div>
         </div>
           <button type="button" class = "btn btn-warning">Regístrate</button><br><br>
-          ¿Tienes una cuenta?<br>
+          <p style="color: white;">¿Tienes una cuenta?</p><br>
           <a href = "{% url 'iniciar' %}">Entrar</a>
           <br>
     </div>
