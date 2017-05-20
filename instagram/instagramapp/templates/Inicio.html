@@ -12,14 +12,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </head>
 
-  <body background = "../static/media/Espacio.jpg">
+  <body background = "../static/media/Espacio.jpg" style = "font-size:14px">
     <center>
-      <div class="card" style="width: 40rem;background-color: transparent;">
+      <div class="card" style="width: 29rem;background-color: transparent;">
         <div class="card-block">
           <form>
             <div class = "form-group"id="Formulario">
               <h1 style="color:white;">INICIO DE SESION</h1>
-              <p style="color:white;">¡Bienvenido!</p><br><br>
+              <p style="color:white;font-size:24px">Bienvenido</p><br><br>
               <div class = "form-group">
                 <input class = "form-control"type = "text" placeholder = "Ingrese su Usuario o Correo">
               </div>
@@ -27,6 +27,9 @@
                 <input class = "form-control"type = "password" placeholder="Ingrese su Contraseña">
               </div>
               <button type="button" class = "btn btn-warning">Iniciar</button><br><br>
+              <p style="color: white;">¿No tienes una cuenta?</p>
+              <a href = "{% url 'registrar' %}">Registrate</a>
+              <br>
             </div>
           </form>
         </div>

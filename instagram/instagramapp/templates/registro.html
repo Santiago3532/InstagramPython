@@ -1,50 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>registro</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!--<link rel="stylesheet" href="{% static 'css/Registro.css' %}">-->
-
-<meta name="viewport" content="width:device-width, initial-scale=1.0">
-</head>
-<body background = "../static/media/Espacio.jpg">
-  <center><div class="card" style="width: 40rem;">
-    <div class="card-block">
-      <form>
-        <div class = "form-group"id="Formulario">
-          <h1 style="color:white;">Registro</h1>
-          <h2 style="color:white;">Bienvenido</h2><br><br>
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Correo" aria-describedby="basic-addon2">
-            <span class="input-group-addon" id="basic-addon2">@example.com</span>
-          </div><br>
-          <div class = "form-group">
-            <input class = "form-control"type = "text" placeholder = "Ingrese su Nombre">
-          </div>
-          <div class = "form-group">
-            <input class = "form-control"type = "text" placeholder = "Ingrese su Usuario">
-          </div>
-          <div class="form-group">
-            <input class = "form-control"type = "password" placeholder="Ingrese su Contraseña">
+  <head>
+    <meta charset="UTF-8">
+    <title>registro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="{% static 'css/Registro.css' %}">-->
+    <meta name="viewport" content="width:device-width, initial-scale=1.0">
+  </head>
+  <body background = "../static/media/Espacio.jpg">
+    <center>
+      <div class="card" style="width: 40rem;">
+        <div class="card-block">
+          <form action="{% url 'crear_usuario' %}" method = "POST">
+            {% csrf_token %}
+            <div class = "form-group"id="Formulario">
+              <h1 style="color:white;">REGISTRO</h1>
+              <h2 style="color:white;font-size:24px">Bienvenido</h2><br><br>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Correo" aria-describedby="basic-addon2" name="email" id ="email" >
+                <span class="input-group-addon" id="basic-addon2">@example.com</span>
+              </div><br>
+              <div class = "form-group">
+                <input class = "form-control"type = "text" placeholder = "Ingrese su Nombre" name="name" id= "name">
+              </div>
+              <div class = "form-group">
+                <input class = "form-control"type = "text" placeholder = "Ingrese su Usuario" name="username" id="username">
+              </div>
+              <div class="form-group">
+                <input class = "form-control"type = "password" placeholder="Ingrese su Contraseña" name = "password" id = "password">
+              </div>
+            </div>
+              <button class = "btn btn-warning">Regístrate</button><br><br>
+              <p style="color: white;">¿Tienes una cuenta?</p><br>
+              <a href = "{% url 'iniciar' %}">Entrar</a>
+              <br>
+            </form>
           </div>
         </div>
-          <button type="button" class = "btn btn-warning">Regístrate</button><br><br>
-          <p style="color: white;">¿Tienes una cuenta?</p><br>
-          <a href = "{% url 'iniciar' %}">Entrar</a>
-          <br>
-    </div>
-  </div>
-</form></center>
-<br><br>
-  <center><div>
-  <!--CLASS-->
-  <a href="https://play.google.com/store/apps?hl=es"><img src="Imagenes/googleplay.png" class="Img1"></a>
-  <!--ID-->
-  <a href="https://itunes.apple.com/co/genre/ios/id36?mt=8"><img src="Imagenes/appstore.jpg" id="Img2"><br></a>
-</div></center>
-</body>
+      </center>
+  </body>
 </html>
