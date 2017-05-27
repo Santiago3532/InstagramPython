@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from instagramapp.models import *
 
 # Create your views here.
 def registrar(request):
@@ -11,9 +13,13 @@ def home(request):
     return render(request, 'Ins.html')
 
 def crear_usuario(request):
-    email = (request.POST[ 'email' ])
-    username = (request.POST[ 'username' ])
-    name = (request.POST[ 'name' ])
-    password = (request.POST[ 'password' ])
-    print(email, username, name, password)
-    return render(request, 'registro.html')
+    _email = (request.POST[ 'email' ])
+    _username = (request.POST[ 'username' ])
+    _name = (request.POST[ 'name' ])
+    _password = (request.POST[ 'password' ])
+    user = User.objects.create_user( username = _username, email =_email, first_name =_name, password =_password )
+    print(user)
+    print(user.password)
+    myUser = MiUsuario(usuario = user)
+    myUser.save()
+    return redirect('iniciar')
